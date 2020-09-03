@@ -1,9 +1,9 @@
 package org.neonsis;
 
 /*
-Write a function that determines whether an array is a subsequence of another array.
-A subsequence is a set of numbers that are not necessarily adjacent to each other in the second array but appear in the
-same order as in the first array. For example, the array [3, 5, 2] is valid a subsequence of the array [1, 3, 4, 5, 6, 2].
+    Write a function that determines whether an array is a subsequence of another array.
+    A subsequence is a set of numbers that are not necessarily adjacent to each other in the second array but appear in the
+    same order as in the first array. For example, the array [3, 5, 2] is valid a subsequence of the array [1, 3, 4, 5, 6, 2].
 */
 
 import java.io.FileNotFoundException;
