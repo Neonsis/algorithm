@@ -1,5 +1,6 @@
 package org.neonsis;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /*
@@ -10,28 +11,23 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] array = randomArray();
         bubbleSort(array);
+        System.out.println(Arrays.toString(array));
     }
 
     private static int[] randomArray() {
-        int[] array = new int[100000];
+        int[] array = new int[50];
         Random random = new Random();
-        for (int i = 0; i < 100000; i++) {
-            array[i] = random.nextInt();
+        for (int i = 0; i < 50; i++) {
+            array[i] = Math.abs(random.nextInt() % 100);
         }
         return array;
     }
 
-    // Best: O(n) time | O(1) space
-    // Average: O(n^2) time | O(1) space
-    // Worst: O(n^2) time | O(1) space
-
     public static void bubbleSort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (array[j] < array[j - 1]) {
-                    swap(array, j, j - 1);
-                } else {
-                    break;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
                 }
             }
         }
