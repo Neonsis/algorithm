@@ -1,4 +1,4 @@
-package org.neonsis;
+package org.neonsis.easy;
 
 /*
     Write a function that determines whether an array is a subsequence of another array.

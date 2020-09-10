@@ -1,4 +1,4 @@
-package org.neonsis;
+package org.neonsis.easy;
 
 /*
     Given a bst and a target int K. The task is to find the node with minimum absolute difference with

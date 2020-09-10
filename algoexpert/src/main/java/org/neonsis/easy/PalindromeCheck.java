@@ -1,4 +1,4 @@
-package org.neonsis;
+package org.neonsis.easy;
 
 /*
     Check if string is palindrome

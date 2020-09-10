@@ -1,4 +1,4 @@
-package org.neonsis;
+package org.neonsis.easy;
 
 /*
    Implement Caesar Encryptor only for lower case characters

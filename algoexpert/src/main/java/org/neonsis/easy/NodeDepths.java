@@ -1,10 +1,7 @@
-package org.neonsis;
-
-import java.util.ArrayList;
-import java.util.List;
+package org.neonsis.easy;
 
 /*
-    Given a bst, find sum of all brunches.
+    Given a binary tree, find sum of depths from root node.
     BST:
           10
         /    \
@@ -15,7 +12,8 @@ import java.util.List;
    1         14
 */
 
-public class BrunchSums {
+public class NodeDepths {
+
     public static void main(String[] args) {
         BST rootBst = new BST(10);
         BST bst = new BST(5);
@@ -36,26 +34,20 @@ public class BrunchSums {
         bst4.right = bst6;
         bst5.right = bst7;
 
-        branchSums(rootBst);
+        int depths = calculateNodeDepths(rootBst);
+        System.out.println(depths);
     }
 
-    // Recursive solution (n) - time, (n) - space
-    public static List<Integer> branchSums(BST root) {
-        List<Integer> sumsOfBranch = new ArrayList<>();
-        calculateSum(root, 0, sumsOfBranch);
-        return sumsOfBranch;
+    // Recursive solution (n) - time, (1) - space
+    public static int calculateNodeDepths(BST node) {
+        return calculateNodeDepths(node, 0);
     }
 
-    private static void calculateSum(BST node, int branchSum, List<Integer> sumsOfBranch) {
-        if (node == null) return;
-
-        int sumPerLayer = branchSum + node.value;
-        if (node.left == null && node.right == null) {
-            sumsOfBranch.add(sumPerLayer);
-            return;
-        }
-        calculateSum(node.left, sumPerLayer, sumsOfBranch);
-        calculateSum(node.right, sumPerLayer, sumsOfBranch);
+    public static int calculateNodeDepths(BST node, int sum) {
+        if (node == null) return 0;
+        int right = calculateNodeDepths(node.right, sum + 1);
+        int left = calculateNodeDepths(node.left, sum + 1);
+        return right + left + sum;
     }
 
     static class BST {
